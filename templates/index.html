@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sistema Biblioteca</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <h1>Sistema Biblioteca</h1>
+        <p>Bem-vindo ao Sistema de gerenciamento da Biblioteca!</p>
+    </header>
+
+    <h2>Menu Principal</h2>
+
+    <div class="menu">
+
+        <a href="/usuarios/" class="card">
+            <h3>Usuários</h3>
+            <p>Gerenciar os usuários do sistema</p>
+        </a>
+
+        <a href="/livros/" class="card">
+            <h3>Livros</h3>
+            <p>Gerenciar o acervo de livros</p>
+        </a>
+
+        <a href="/emprestimos/" class="card">
+            <h3>Empréstimos</h3>
+            <p>Gerenciar os empréstimos de livros</p>
+        </a>
+
+    </div>
+
+</body>
+
+</html>
