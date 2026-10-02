@@ -1,0 +1,77 @@
+```html
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Empréstimos - Sistema Biblioteca</title>
+
+    <link rel="stylesheet" href="{% static 'css/emprestimos.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <h1>Sistema Biblioteca</h1>
+
+        <nav>
+            <a href="/">Início</a>
+            <a href="/usuarios/">Usuários</a>
+            <a href="/livros/">Livros</a>
+            <a href="/emprestimos/">Empréstimos</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="titulo">
+            <h2>Empréstimos</h2>
+            <p>Gerenciamento dos empréstimos da biblioteca.</p>
+        </section>
+
+        <section class="lista">
+
+            <h2>Empréstimos cadastrados</h2>
+
+            {% if emprestimos %}
+
+                {% for emprestimo in emprestimos %}
+
+                    <div class="emprestimo">
+                        <p>
+                            <strong>Usuário:</strong>
+                            {{ emprestimo.usuario }}
+                        </p>
+
+                        <p>
+                            <strong>Livro:</strong>
+                            {{ emprestimo.livro }}
+                        </p>
+
+                        <p>
+                            <strong>Data do empréstimo:</strong>
+                            {{ emprestimo.data_emprestimo }}
+                        </p>
+
+                    </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <p class="vazio">
+                    Nenhum empréstimo cadastrado.
+                </p>
+
+            {% endif %}
+
+        </section>
+
+    </main>
+
+</body>
+</html>
+```
